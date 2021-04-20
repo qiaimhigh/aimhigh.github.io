@@ -1,349 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="笔记 1.outline是用来定义元素的轮廓，它不同于border，此轮廓是不会将其他元素覆盖掉，我们可以设置在将鼠标移到一个链接上的时候，显示一个边框。 2.box-sizing可以用来设置盒子的可见框尺寸大小的计算方式，一般在默认情况下可见框的大小由内容区、内边距和边框决定的。可选值：content-box（默认值）作用宽度和高度用来设置内容区的大小；border-box宽度和高度设置整个盒子">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2021/04/20/%E5%81%B7%E6%87%92%E6%97%B6%E8%AE%B0%E7%9A%84%E7%AC%94%E8%AE%B0/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="笔记 1.outline是用来定义元素的轮廓，它不同于border，此轮廓是不会将其他元素覆盖掉，我们可以设置在将鼠标移到一个链接上的时候，显示一个边框。 2.box-sizing可以用来设置盒子的可见框尺寸大小的计算方式，一般在默认情况下可见框的大小由内容区、内边距和边框决定的。可选值：content-box（默认值）作用宽度和高度用来设置内容区的大小；border-box宽度和高度设置整个盒子">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdn.net/20180810105007686?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODA1NTM4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180810104827681?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODA1NTM4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="article:published_time" content="2021-04-20T10:01:32.576Z">
-<meta property="article:modified_time" content="2021-04-16T15:37:08.512Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180810105007686?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODA1NTM4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+const { Component } = require('inferno');
+const Head = require('./common/head');
+const Navbar = require('./common/navbar');
+const Widgets = require('./common/widgets');
+const Footer = require('./common/footer');
+const Scripts = require('./common/scripts');
+const Search = require('./common/search');
+const classname = require('./util/classname');
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+module.exports = class extends Component {
+    render() {
+        const { env, site, config, page, helper, body } = this.props;
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+        const{ comment } = config;
 
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
+        // =====index hot_recommend
+        var hotRecommendStr =
+            "<div class=\"card widget\">" +
+            "   <div class=\"card-content\">" +
+            "       <h3 class=\"menu-label\">热门推荐</h3><span id=\"index_hot_div\">加载中，稍等几秒...</span>" +
+            "   </div>" +
+            "</div>";
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-偷懒时记的笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/04/20/%E5%81%B7%E6%87%92%E6%97%B6%E8%AE%B0%E7%9A%84%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-04-20T10:01:32.576Z" itemprop="datePublished">2021-04-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>笔记</p>
-<p>1.<em><strong>outline</strong></em>是用来定义元素的轮廓，它不同于border，此轮廓是不会将其他元素覆盖掉，我们可以设置在将鼠标移到一个链接上的时候，显示一个边框。</p>
-<p>2.<em><strong>box-sizing</strong></em>可以用来设置盒子的<strong>可见框</strong>尺寸大小的计算方式，一般在默认情况下可见框的大小由内容区、内边距和边框决定的。可选值：content-box（默认值）作用宽度和高度用来设置<strong>内容区</strong>的大小；<em><strong>border-box</strong></em>宽度和高度设置整个盒子<strong>可见框</strong>的大小。</p>
-<p>3.<em><strong>box-shadow</strong></em>：水平偏移量 垂直偏移量  阴影的模糊半径 颜色；该属性可以设置元素阴影效果，阴影不会影响页面布局。（box-shadow:0px 0px 50px <strong>rgba(0,0,0,.3)</strong>;当.3越小则颜色越浅</p>
-<blockquote>
-<p>偏移量遵循右正左负，下正上负，第三个值越大阴影越模糊；颜色可以设置rgba可以使阴影的颜色更加真实。</p>
-</blockquote>
-<p>4.元素的圆角：<em><strong>border -（ top, bottom) -（left, top, bottoom, right) - radius</strong></em>该属性可以这只圆角的半径大小，该元素可以设置一个值也可同时设置两个值，一个值的时候：给水平和垂直都可以设置圆的大小；设置两个值得时候，汇会分别给水平和垂直设置大小。我们可以利用这个性质画出一个椭圆来。也可以利用<em><strong>border-radius</strong></em>设置大小，它将会分别指定四个角的圆，当我们设置四个值的时候，会分别给左上，右上，右下，左下设置，三个值：左上 右上/左下 右下；两个值：左上/右下 右上/左下；一个值：所有。（当我么要直接画圆的时候，我们可以直接设置50%，即可）</p>
-<p><code>border-radius:50%;</code>(这个值得百分之的取法，使按照 水平方向上面取水平方向上宽度的一半，垂直方向上取垂直方向上高度的一般，然后以这两个值分别为半径画圆)</p>
-<h1 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h1><p>通过浮动可以是一个元素向其父元素的左侧或右侧移动；属性float，可选值none不浮动，left向左浮动，right向右移动。</p>
-<h5 id="浮动的特点"><a href="#浮动的特点" class="headerlink" title="浮动的特点"></a>浮动的特点</h5><p>1.浮动元素会完全脱离文档流，不在占据文档流中的位置；</p>
-<p>2.设置浮动以后元素会向父元素的左侧或者右侧移动；</p>
-<p>3.浮动元素默认不会从父元素中移出；</p>
-<p>4.浮动元素向左或向右移动的时候，不会超过在它前边的其他浮动元素；</p>
-<p>5.如果浮动元素的上边是一个没有浮动的块元素，则浮动元素上移；</p>
-<p>6.浮动元素不会超过在它上边的浮动的兄弟元素，最多就和它一样子高；</p>
-<p>7.当块元素浮动以后，将不会独占一行；</p>
-<p>8。当行内元素浮动之后就会变成一个块元素，拥有块元素的所有特点。</p>
-<h2 id="重要的笔记"><a href="#重要的笔记" class="headerlink" title="重要的笔记"></a>重要的笔记</h2><p>1.line-height: px;该属性可以将文字在其块级元素中居中，只需要将其的大小设为该块级元素的大小即可</p>
-<h3 id="高度塌陷："><a href="#高度塌陷：" class="headerlink" title="高度塌陷："></a>高度塌陷：</h3><p>在浮动布局中，父元素的高度默认是被子元素撑开的，当子元素设置浮动以后，其会脱离文档流，此时父元素的高度就会塌陷，将会导致页面布局的混乱。这是我们可以，开启元素的BFC属性来解决这个问题。</p>
-<blockquote>
-<p>开始BFC的元素的特点：</p>
-<p>开启后元素不会被浮动元素所覆盖；子元素和父元素的margin不会重叠；元素将能将可以将浮动元素包含</p>
-</blockquote>
-<p>开启方式：（每种开启方式都存在副作用，但还是第三种中最小）</p>
-<p>设置元素浮动可以开启BFC属性，但不是很推荐；第二可以将元素设置为<strong>行内块元素</strong>（display：inline-block；）也不是很推荐；第三给元素设置<em><strong>overflow</strong></em>属性（overflow的值除过visible都可，最好使用<strong>hidden</strong>&lt;裁剪内容但是不会显示滚动条&gt;这个值）。</p>
-<p>3.<em><strong>clear</strong></em>属性：原理：设置清除<strong>浮动</strong>以后，浏览器会自动为元素添加上一个外边距以使其不受其他元素影响。</p>
-<p>属性值：<em><strong>left</strong></em> 清楚左侧浮动元素对当前元素的影响</p>
-<p><em><strong>right</strong></em> 清除浮动元素对右侧的影响</p>
-<p><em><strong>both</strong></em>清除两侧浮动元素中影响最大的那侧</p>
-<p>4.解决高度塌陷：</p>
-<p>我们可以在该元素的最后面加上一个块级元素，然后给该元素添加<em><strong>clear：both；</strong></em>属性，来解决其高度塌陷问题。</p>
-<p>最终解决方法：利用css中的::after属性，设置再给其设置相关的属性利用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> 	 .box1::after&#123;</span><br><span class="line"></span><br><span class="line">​     	 content: &#39;&#39;;</span><br><span class="line"></span><br><span class="line">​     	display: block;</span><br><span class="line"></span><br><span class="line">​    	  clear: both;</span><br><span class="line"></span><br><span class="line">   	&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<p> 来达到最终的目的</p>
-<blockquote>
-<p>:after 伪元素在元素之后添加内容。可以用content:url();设置添加的内容</p>
-</blockquote>
-<p>5.<em><strong>clearfix</strong></em>可以利用以下代码来解决外边距重叠和高度塌陷问题，使用时只需将元素的class设置为clearfix即可</p>
-<p>样式代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">​	.clearfix::before,</span><br><span class="line"></span><br><span class="line">​	.clearfix::after&#123;</span><br><span class="line"></span><br><span class="line">​				content:&#39;&#39;,</span><br><span class="line"></span><br><span class="line">​				dispaly:block;</span><br><span class="line"></span><br><span class="line">​				clear:both;</span><br><span class="line"></span><br><span class="line">​		&#125;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p>属性：position</p>
-<p>属性值：默认值static 没有定位</p>
-<p>​                relative 开启元素的相对定位</p>
-<p>​                absolute 开启元素的绝对定位</p>
-<p>​                fixed 开启元素的固定定位</p>
-<p>​                sticky 开启元素的粘滞定位</p>
-<blockquote>
-<p>每个元素定位时都是以一个原先的位置为基准，通过设置偏移量的大小，来改变元素的位置的</p>
-</blockquote>
-<h3 id="层级"><a href="#层级" class="headerlink" title="层级"></a>层级</h3><p>开启定位的元素，我们可以通过设置 z-index 属性来改变元素的层级 ，层级高的元素会将层级低的元素覆盖掉，我么可以给该属性设置整数值，整数值越大的元素，层级越高。如果元素的层级一样的话，则会优先显示下边的元素；但是对于父子元素来说，子元素的层级永远比父元素的层级高，其不被父元素覆盖掉。</p>
-<h2 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h2><p>相对定位的特点：</p>
-<p>1.元素开启相对定位之后，如果不设置偏移量这不会发生位置上的变化</p>
-<blockquote>
-<p>偏移量的属性：（可以是正值也可以是负值）</p>
-<p>top , bottom ,left ,right</p>
-</blockquote>
-<p>2.相对定位是相对于自己<strong>原来的位置</strong>发生的位置变化</p>
-<p>3.相对定位会提高元素的层级</p>
-<p>4.相对元素不会使元素脱离文档流</p>
-<p>5.相对定位不会改变元素的性质（块级元素还是块级元素等）</p>
-<p>相关代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">		.box &#123;</span><br><span class="line">			background: red;</span><br><span class="line">			width: 100px;</span><br><span class="line">			height: 100px;</span><br><span class="line">			float: left;</span><br><span class="line">			margin: 5px;</span><br><span class="line">		&#125;</span><br><span class="line">		.two &#123;</span><br><span class="line">			position: relative;</span><br><span class="line">			top: 50px;</span><br><span class="line">			left: 50px;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;box&quot; &gt;One&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;box  two&quot; &gt;Two&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;box&quot; &gt;Three&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;box&quot;&gt;Four&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>效果：</p>
-<p><img src="https://img-blog.csdn.net/20180810105007686?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODA1NTM4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="相对定位"></p>
-<h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2><p>当元素的position值设置为absolute的时候，元素开启绝对定位。</p>
-<p><em><strong>特点</strong></em>：</p>
-<p>1.开启绝对定位的元素，如果不设置偏移量则位置不会发生变化</p>
-<p>2.开启绝对定位后，元素会从文档流中脱离</p>
-<p>3.开启绝对定位会改变元素的性质，行内变成块，块的高度会被内容撑开</p>
-<p>4.绝对定位会使元素提升一个层级</p>
-<p>5.绝对定位是相对于其包含块进行定位的</p>
-<blockquote>
-<p>包含块</p>
-<p>正常情况下：包含块就是离目前元素最近的祖先块级元素</p>
-<p>绝对定位的包含块：距离它最近的没有开启了定位的祖先元素，如果没有元素开启定位则<strong>根元素</strong>就是它的包含块</p>
-</blockquote>
-<head>
-    <style type="text/css">
-        .box {
-            background: red;
-            width: 100px;
-            height: 100px;
-            float: left;
-            margin: 5px;
+        if (page.path != 'index.html'
+            || (comment.type == 'undefined'
+                || comment.type != 'gitalk'
+                || comment.has_hot_recommend == 'undefined'
+                || !comment.has_hot_recommend)) {
+            hotRecommendStr = '';
         }
-        .two {
-            position: absolute;
+        // =====
 
+        const language = page.lang || page.language || config.language;
+        const columnCount = Widgets.getColumnCount(config.widgets);
 
-
-
-
-<p>效果：</p>
-<p><img src="https://img-blog.csdn.net/20180810104827681?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODA1NTM4MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="绝对定位"></p>
-<h2 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h2><p>将元素的position属性值设置为fixed，将会开启元素的固定定位。</p>
-<p>固定定位也是一种绝对定位，所以固定定位的大部分特点就和绝对定位是一样的。但是不同在固定定位是永远以<em><strong>视窗</strong></em>为参考进行定位的，并且元素不会随着网页的滚动条滚动.</p>
-<p>固定定位的最常见的一种用途是在页面中创建一个固定头部、固定脚部或者固定侧边栏，不需使用margin、border、padding。</p>
-<p><code>position:fixed;</code></p>
-<h2 id="粘滞定位"><a href="#粘滞定位" class="headerlink" title="粘滞定位"></a>粘滞定位</h2><p>当元素的position属性开启sticky属性值的时候，元素将会开启粘滞定位。</p>
-<p>但是该定位的兼容性不是很好，所以不常用；它的特点和相对定位的特点基本一致，不同的就是当该元素到达一定的位置的时候，将会停止移动，粘滞定位的参照也是以<strong>包含块</strong>为基准的。</p>
-<h3 id="开启定位对布局的影响"><a href="#开启定位对布局的影响" class="headerlink" title="开启定位对布局的影响"></a>开启定位对布局的影响</h3><h5 id="水平布局"><a href="#水平布局" class="headerlink" title="水平布局"></a>水平布局</h5><p>水平布局的等式就需要添加 left 和 right 两个值，此时我们在水平距离上面的等式应该满足</p>
- <p color="red">left + margin-left + border-left + padding-left + width + padding-right + margin-right + border-right + right=包含框的可见区大小</p>
-
-<blockquote>
-<p>应该注意left 和right 的值默认是auto</p>
-</blockquote>
-<p>在这九个元素中，如果有属性值为auto的元素的话，运算规则和之前的一样，当没有属性值为auto的时候，编译器会改变right的值来使上述等式满足。（要注意的是，当我们没有设置left和right的之的时候，他们默认为auto，这样子我们在设值的时候，应该要注意。）</p>
-<h5 id="垂直布局"><a href="#垂直布局" class="headerlink" title="垂直布局"></a>垂直布局</h5><p>当开启绝对定位的时候，在垂直高度上面，就必须要满足以下等式：</p>
-<p>top + margin-top + border-top + padding-top + height + padding-bottom + margin-bottom + border-bottom=包含块的高度</p>
-<p>当没有元素的属性值设置为auto的时候 ，编译器会修改bottom的值，来满足以上等式。其他的规则和上述水平方向上的规则是一样的。</p>
-<p>我们可以利用以上的属性，来使元素在包含块里面局中。</p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/%E5%81%B7%E6%87%92%E6%97%B6%E8%AE%B0%E7%9A%84%E7%AC%94%E8%AE%B0/" data-id="cknpuy3vu000270tzc0070502" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2021/04/20/js%E5%AF%B9%E8%B1%A1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/04/20/%E6%B5%99%E5%A4%A7PTA%E7%BB%83%E4%B9%A0%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/04/20/PythonPTA%E7%BB%83%E4%B9%A0%E9%A2%98/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/20/js%E5%AF%B9%E8%B1%A1/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/20/%E5%81%B7%E6%87%92%E6%97%B6%E8%AE%B0%E7%9A%84%E7%AC%94%E8%AE%B0/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/20/%E6%B5%99%E5%A4%A7PTA%E7%BB%83%E4%B9%A0%E9%A2%98/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/20/%E7%9B%92%E5%BC%8F%E6%A8%A1%E5%9E%8B/">box</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+        return <html lang={language ? language.substr(0, 2) : ''}>
+            <Head env={env} site={site} config={config} helper={helper} page={page} />
+            <body class={`is-${columnCount}-column has-navbar-fixed-top`}>
+                <Navbar config={config} helper={helper} page={page} />
+                <script type="text/javascript" src="/js/theme-setting.js"></script>
+                <section class="section">
+                    <div class="container">
+                        <div class="columns">
+                            <div class={classname({
+                                column: true,
+                                'order-2': true,
+                                'column-main': true,
+                                'is-12': columnCount === 1,
+                                'is-8-tablet is-8-desktop is-8-widescreen': columnCount === 2,
+                                'is-8-tablet is-8-desktop is-6-widescreen': (page.layout != 'post' && page.layout != 'page') && columnCount === 3,
+                                'is-8-tablet is-8-desktop is-9-widescreen': page.layout == 'page' || page.layout == 'post'
+                            })} dangerouslySetInnerHTML={{ __html: hotRecommendStr+body }}></div>
+                            <Widgets site={site} config={config} helper={helper} page={page} position={'left'} />
+                            { page.layout == 'page' || page.layout == 'post' ? null : <Widgets site={site} config={config} helper={helper} page={page} position={'right'} />}
+                        </div>
+                    </div>
+                </section>
+                <Footer config={config} helper={helper} />
+                <Scripts site={site} config={config} helper={helper} page={page} />
+                <Search config={config} helper={helper} />
+            </body>
+        </html>;
+    }
+};
