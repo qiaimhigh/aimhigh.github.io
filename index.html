@@ -369,7 +369,7 @@ height:50vh;
     <article class="index-post">
         <a class="abstract-title" href = "/2021/05/19/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86/" >
             
-                <span>[Untitled Post]</span>
+                <span>事件处理</span>
         </a>
         <div class="abstract-content">
             事件处理1.注册事件​    给元素添加事件，称为注册事件或者绑定事件
@@ -398,9 +398,36 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/14/%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/" >
+            
+                <span>节点操作</span>
+        </a>
+        <div class="abstract-content">
+            节点操作一般地，节点至少拥有nodeType（节点类型）、nodeName（节点名称）和nodeValue（节点值）这三个基本属性。元素节点 nodeType 为 1属性节点 nodeType 为 2文本节点 nodeType 为 3 （文本节点包含文字、空格、换行等）我们在实际开发中，节点操作主要操作的是元素节点
+1.父级节点node.parentNode
+parentNode属性可以返回某节点的父节点，但该父节点是距离子节点最近的一个父节点
+如果指定的节点没有父节点则返回 null
+12345678&lt;div class=&quot;parent&quot;&gt;    &lt...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/14</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/05/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7/" >
             
-                <span>[Untitled Post]</span>
+                <span>自定义属性</span>
         </a>
         <div class="abstract-content">
             自定义属性在使用自定义属性的时候，h5有一个规定，自定义属性的名称必须以“date-”开头，这样子方便我们辨认属性为系统自带的，还是自定义的。
@@ -430,7 +457,7 @@ height:50vh;
     <article class="index-post">
         <a class="abstract-title" href = "/2021/05/09/%E5%B1%95%E5%BC%80%E8%AF%AD%E6%B3%95/" >
             
-                <span>[Untitled Post]</span>
+                <span>展开语法</span>
         </a>
         <div class="abstract-content">
             展开语法展示语法或称点语法体现的就是收/放特性，做为值时是放，做为接收变量时是收。
@@ -489,7 +516,7 @@ Math.PI      ...
     <article class="index-post">
         <a class="abstract-title" href = "/2021/04/29/Dom%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0/" >
             
-                <span>[Untitled Post]</span>
+                <span>Dom操作元素</span>
         </a>
         <div class="abstract-content">
             Dom操作元素我们在利用Dom操作元素的时候，分为三部：首先，获取元素，其次注册元素，最后执行事件。
@@ -520,16 +547,15 @@ getElementsByTagName(),通过元素的类名来获取元素，返回的是一个
     <article class="index-post">
         <a class="abstract-title" href = "/2021/04/21/var%20let%20const%20/" >
             
-                <span>[Untitled Post]</span>
+                <span>var const let</span>
         </a>
         <div class="abstract-content">
-            
-title： var const letvar关键字在定义变量的时候，我们可以使用var来定义。
+            var关键字在定义变量的时候，我们可以使用var来定义。
 1var variale = &quot;variable&quot;;
 
 在javascript中，定义变量的时候不需要声明变量的类型，定义变量的类型是根据变量的值来确定的。
 1. var 声明作用域使用var定义的变量会包含在它的函数的作用域中，如在使用var在一个函数内部定义一个变量时，在函数调用结束之后会自动地销毁改变量。
-12345678      function output ()&#123;          var message = &quot;hi&quot;，man...
+12345678      function output ()&#123;          var message = &quot;hi&quot;，many = &quot;多个变量的定义，使用逗...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -613,90 +639,6 @@ title： var const letvar关键字在定义变量的时候，我们可以使用v
 1.outline是用来定义元素的轮廓，它不同于border，此轮廓是不会将其他元素覆盖掉，我们可以设置在将鼠标移到一个链接上的时候，显示一个边框。
 2.box-sizing可以用来设置盒子的可见框尺寸大小的计算方式，一般在默认情况下可见框的大小由内容区、内边距和边框决定的。可选值：content-box（默认值）作用宽度和高度用来设置内容区的大小；border-box宽度和高度设置整个盒子可见框的大小。
 3.box-shadow：水平偏移量 垂直偏移量  阴影的模糊半径 颜色；该属性可以设置元素阴影效果，阴影不会影响页面布局。（box-shadow:0px 0px 50px rg...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/%E6%B5%99%E5%A4%A7PTA%E7%BB%83%E4%B9%A0%E9%A2%98/" >
-            
-                <span>浙大PTA练习题</span>
-        </a>
-        <div class="abstract-content">
-            编程题
-
-
-标号
-标题
-
-
-
-第1章-1
-从键盘输入两个数，求它们的和并输出
-
-
-第1章-2
-从键盘输入三个数到a,b,c中，按公式值输出
-
-
-第1章-3
-输出“Python语言简单易学”
-
-
-第2章-1
-计算 11+12+13+…+m
-
-
-第2章-2
-[计算分段函数1]
-
-
-第2章-3
-阶梯电价
-
-
-第2章-4
-特殊a串数列求和
-
-
-第2章-5
-求奇数分之一序列前N项和
-
-
-第2章-6
-求交错序列前N项和
-
-
-第2章-7
-产生每位数字相同的n位数
-
-
-第2章-8
-转换函数使用
-
-
-第2章-9
-比较大小
-
-
-第2章-10
-输出华氏-摄氏温度转换表
-
-
-第2章-11
-求平方与倒数序列的部分...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1075,6 +1017,11 @@ title： var const letvar关键字在定义变量的时候，我们可以使用v
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/14</span><a class="archive-post-title" href= "/2021/05/14/%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/" >节点操作</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">04/29</span><a class="archive-post-title" href= "/2021/04/29/Math%E5%AF%B9%E8%B1%A1/" >[Untitled Post]</a>
         </li>
     
@@ -1105,11 +1052,6 @@ title： var const letvar关键字在定义变量的时候，我们可以使用v
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/%E7%AC%94%E8%AE%B0/" >[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/hello-world/" >Hello World</a>
         </li>
     
@@ -1124,7 +1066,7 @@ title： var const letvar关键字在定义变量的时候，我们可以使用v
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/04/21/var%20let%20const%20/" >[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/04/21/var%20let%20const%20/" >var const let</a>
         </li>
     
     
@@ -1138,7 +1080,7 @@ title： var const letvar关键字在定义变量的时候，我们可以使用v
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/04/29/Dom%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0/" >[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/04/29/Dom%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0/" >Dom操作元素</a>
         </li>
     
     
@@ -1152,7 +1094,7 @@ title： var const letvar关键字在定义变量的时候，我们可以使用v
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/05/09/%E5%B1%95%E5%BC%80%E8%AF%AD%E6%B3%95/" >[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/05/09/%E5%B1%95%E5%BC%80%E8%AF%AD%E6%B3%95/" >展开语法</a>
         </li>
     
     
@@ -1166,7 +1108,7 @@ title： var const letvar关键字在定义变量的时候，我们可以使用v
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/05/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7/" >[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/05/13/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7/" >自定义属性</a>
         </li>
     
     
@@ -1180,7 +1122,7 @@ title： var const letvar关键字在定义变量的时候，我们可以使用v
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/05/19/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86/" >[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/05/19/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86/" >事件处理</a>
         </li>
     
     </div>
