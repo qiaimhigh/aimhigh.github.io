@@ -354,6 +354,55 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/30/this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/" >
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            this指向问题在我们研究this指向问题的时候，我们需要知道的是，this指向调用它的对象，谁调用它，它就指向谁。
+具体参考：参考链接
+addElementListener中事件函数的this指向先看一个例子：
+123456&lt;script&gt;    let d = document.querySelector(&#x27;div&#x27;);    d.addEventListener(&#x27;mousemove&#x27;,(e)=&gt;&#123;        console.log(this);   //window    &#125;)&lt;/script...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/30</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/30/offset/" >
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/30</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/05/19/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86/" >
             
                 <span>事件处理</span>
@@ -390,11 +439,13 @@
                 <span>节点操作</span>
         </a>
         <div class="abstract-content">
-            节点操作一般地，节点至少拥有nodeType（节点类型）、nodeName（节点名称）和nodeValue（节点值）这三个基本属性。元素节点 nodeType 为 1属性节点 nodeType 为 2文本节点 nodeType 为 3 （文本节点包含文字、空格、换行等）我们在实际开发中，节点操作主要操作的是元素节点
+            节点操作一般地，节点至少拥有nodeType（节点类型）、nodeName（节点名称）和nodeValue（节点值）这三个基本属性。元素节点 nodeType 为 1属性节点 nodeType 为 2文本节点 nodeType 为 3 （文本节点包含文字、空格、换行等）
+document节点的nodeType为9
+我们在实际开发中，节点操作主要操作的是元素节点
 1.父级节点node.parentNode
 parentNode属性可以返回某节点的父节点，但该父节点是距离子节点最近的一个父节点
 如果指定的节点没有父节点则返回 null
-12345678&lt;div class=&quot;parent&quot;&gt;    &lt...
+12345678&lt;div class=&quot;...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -704,9 +755,44 @@ parentNode属性可以返回某节点的父节点，但该父节点是距离子�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 13
+        Total : 16
         </div>
         <!-- search  -->
         
@@ -828,6 +914,48 @@ parentNode属性可以返回某节点的父节点，但该父节点是距离子�
     
         <li class="archive-post-item">
             <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/05/19/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86/" >事件处理</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/05/30/offset/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/05/30/this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/06/01/promise/" >Promise</a>
         </li>
     
     </div>
